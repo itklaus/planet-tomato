@@ -2,12 +2,16 @@ class Tomato {
   constructor() {
     this.testNotify();
 
-    this.min = 0;
-    this.sec = 5;
+    this.min = 24;
+    this.sec = 59;
 
     document.getElementById('start').onclick = () => {
       this.time();
     } 
+
+    document.getElementById('stop').onclick = () => {
+      this.stop();
+    }
   }
 
   testNotify() {
@@ -33,11 +37,7 @@ class Tomato {
 
   time() {
 
-    let pook = function() {
-      console.log('Hello!');
-    }
-
-    let timer = setInterval( () => {
+    this.timer = setInterval( () => {
      
       if (this.min < 10) {
         if (this.sec >= 10) document.getElementById('pomodoroTimer').innerHTML='0'+this.min+':'+this.sec;
@@ -54,7 +54,11 @@ class Tomato {
       }
       this.sec--;
       if (this.min < 0) {
-        clearInterval(timer);
+        clearInterval(this.timer);
+        
+        this.min = 24;
+        this.sec = 59;
+        
         this.notify();
       }
 
@@ -64,6 +68,13 @@ class Tomato {
   }
 
   stop() {   
+    this.min = 24;
+    this.sec = 59;
+
+    document.getElementById('pomodoroTimer').innerHTML= '25:00';
+  
+  clearInterval(this.timer);
+  
   }
 }
 
