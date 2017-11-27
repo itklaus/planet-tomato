@@ -7,13 +7,13 @@ class Tomato {
 
     document.getElementById('start').onclick = () => {
       
-      this.time(24, 59);
+      let prom = new Promise((resolve, reject) => {
+        this.time(2, 2);
+      });
 
-      let timeStart = 60 * 1000 * 25;
-
-      setTimeout(() => {
-        this.relog(4, 59);
-      }, timeStart);
+      prom.then(() => {
+        console.log("НЕКСТ")
+      })
       
       
       // this.time(2, 2);
@@ -42,7 +42,7 @@ class Tomato {
     let notification = new Notification('Pomodoro Clock says:', {
       dir: 'auto',
       icon: "https://pp.userapi.com/c840234/v840234665/302df/EFnxoLbHk_Y.jpg",
-      body: 'Ниндя, таймер окончил свою работу!'
+      body: 'Время отдахнуть, ниндзя.'
     });
     console.log('Оповещение запустилось!');
   }
@@ -66,14 +66,14 @@ class Tomato {
 
       if (sec == 0) {
         min--;
-        sec = 60;
+        sec = 3;
       }
       sec--;
       if (min < 0) {
         clearInterval(this.timer);
         
-       this.min = 24;
-       this.sec = 59;
+       this.min = 5;
+       this.sec = 2;
 
         this.notify();
       }
