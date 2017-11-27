@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px; }
+
+header {
+  height: 60px;
+  width: 100%;
+  background: #FF8E83; }
+
+section {
+  margin: 3em; }
+
+#start, #stop {
+  display: inline-block;
+  margin: 0.1em;
+  cursor: pointer;
+  font-size: 2em;
+  padding: 1em 2em;
+  border: 1px solid #eaeaea; }
+
+#pomodoroTimer {
+  width: 100%;
+  display: block;
+  font-size: 4em;
+  margin-top: 3rem; }
