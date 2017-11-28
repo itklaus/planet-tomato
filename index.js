@@ -15,6 +15,8 @@ const config = require('config');
 const path = require('path');
 const fs = require('fs');
 
+const PORT = process.env.PORT || 5000
+
 const handlers = fs.readdirSync(path.join(__dirname, 'handlers')).sort();
 handlers.forEach(handler => require('./handlers/' + handler).init(app));
 
@@ -33,4 +35,4 @@ router.get('/', async function(ctx, next) {
 
 app.use(router.routes());
 
-app.listen(config.get('port'));
+app.listen(PORT, () => console.log(`Listening on ${ PORT  }`));
