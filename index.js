@@ -1,8 +1,11 @@
-// A "closer to real-life" app example
-// using 3rd party middleware modules
-// P.S. MWs calls be refactored in many files
+/**
+ * @file 
+ * Provides some feature.
+ *
+ * The extra line between the end of the @file docblock
+ * and the file-closure is important.
+ */
 
-// long stack trace (+clarify from co) if needed
 if (process.env.TRACE) {
   require('./libs/trace');
 }
