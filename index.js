@@ -28,7 +28,7 @@ router.get('/', async function(ctx, next) {
   ctx.session.count = ++count;
 
   ctx.body = ctx.render('./templates/index.pug', {
-    user: 'John',
+    user: 'You!',
     count
   });
 });

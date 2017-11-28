@@ -1,19 +1,18 @@
 doctype html
 html
+  head
+    link(href="https://fonts.googleapis.com/css?family=Roboto:100,400", rel="stylesheet")
+    link(rel="stylesheet", href="sass/master.css")
+
   body
+    div#container
+      div#user
+        div User: #{user}
+        div Views count: #{count}
 
-    ul
-      li
-        a(href="/static.html") static
-      li
-        a(href="/views") views count
-
-    div User: #{user}
-    div Views count: #{count}
-
-  section
-    span#timeStart Start
-    span#reset Reset
-    span#start
-
+      section
+        span#timeStart Start
+        span#reset Reset
+        span#start
+      
     script(src="master.js")

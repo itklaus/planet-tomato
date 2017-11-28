@@ -8,6 +8,8 @@ class Tomato {
     this.break = params.session || 5;
     this.isTrue = true;
 
+    document.getElementById('start').innerHTML="25:00";
+
     this.testNotify();
    
     document.getElementById('timeStart').onclick = () => {
